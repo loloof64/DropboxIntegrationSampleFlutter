@@ -16,6 +16,9 @@ const dropboxRedirectSchemeMobile = 'YOUR_REDIRECT_SCHEME_MOBILE';
 const dropboxRedirectUriMobile = 'YOUR_REDIRECT_URI_MOBILE';
 const dropboxRedirectSchemeDesktop = 'YOUR_REDIRECT_SCHEME_DESKTOP';
 const dropboxRedirectUriDesktop = 'YOUR_REDIRECT_URI_DESKTOP';
+const dropboxScopes = [
+    // Your scopes, each in a simple string value
+];
 ```
 
 The redirect uri for mobile should be something follow a pattern like `${xxxx}://${yyyy}`, where the `xxxx` value can have lowercase letters, digits, dashes and points (and must start with a letter of course, also do not put dollars and curly braces, it's just for you to know that you must make a substitution). The redirect scheme for mobile is just the part of the redirect uri for mobile that is before the part ``://${yyyy}``. As an example ``abcd123://efgh`` for the uri and ``abcd123`` for the scheme.
@@ -40,3 +43,7 @@ replace the android:scheme with the scheme of your mobile redirect uri.
     </intent-filter>
 </activity>
 ```
+
+### Building missing files
+
+* Run `dart run build_runner build` in the project root directory from your terminal.
